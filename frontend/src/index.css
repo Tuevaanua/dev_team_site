@@ -1,0 +1,163 @@
+:root {
+  /* Глубокий черный фон */
+  --bg-dark: #0a0a0a;
+  --bg-panel: #1a1a1a;
+  
+  /* Золотой градиент (от яркого золота к коричнево-золотому) */
+  --gold-gradient: linear-gradient(135deg, #FFD700 0%, #B8860B 50%, #8B6508 100%);
+  --gold-solid: #D4AF37;
+  
+  /* Текст */
+  --text-main: #E0E0E0;
+  --text-muted: #888888;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--gold-solid);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* Утилитный класс для текста с золотым градиентом */
+.text-gradient {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Базовая кнопка */
+.btn-gold {
+  background: var(--gold-gradient);
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+}
+
+.swiper-button-next, .swiper-button-prev {
+  color: var(--gold-solid) !important;
+}
+.swiper-pagination-bullet-active {
+  background: var(--gold-solid) !important;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 1rem;
+  background-color: #121212;
+  border: 1px solid #333;
+  border-radius: 4px;
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--gold-solid);
+  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+}
+
+.form-input::placeholder {
+  color: #555;
+}
+
+/* Контейнер для центрирования форм (Login, Register и т.д.) */
+.auth-container {
+  max-width: 400px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background-color: var(--bg-panel);
+  border-radius: 8px;
+  border: 1px solid #333;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Стили для 3D карусели Swiper Coverflow */
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 320px; /* Фиксированная ширина слайда для 3D эффекта */
+  height: 400px;
+}
+
+/* Стили для карточки внутри 3D-слайдера */
+.coverflow-card {
+  background: var(--bg-panel);
+  border: 1px solid #333;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column; /* <-- ИСПРАВЛЕНО ЗДЕСЬ */
+  box-shadow: 0 15px 50px rgba(0,0,0,0.5);
+}
+
+/* Стилизация стрелочек Swiper под золотой дизайн */
+.home-projects-slider {
+  padding: 20px 40px !important; /* Даем отступы по бокам, чтобы стрелочки не наезжали на карточки */
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--gold-solid) !important;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  opacity: 0.7;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Немного уменьшаем размер самих иконок-стрелочек */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 24px !important;
+  font-weight: bold;
+}
+
+/* Цвет точек пагинации */
+.swiper-pagination-bullet {
+  background: #fff !important;
+  opacity: 0.3 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--gold-solid) !important;
+  opacity: 1 !important;
+}
